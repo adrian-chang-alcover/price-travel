@@ -1,0 +1,7 @@
+PriceTravel.setup do |config|
+	config.username = 'your_username'
+	config.password = 'your_password'
+	config.server = 'Price Travel server address'
+	config.locale = 'en_US' # For Example 'de_DE'. Default is 'en_US'
+	config.currency_code = 'USD' # For Example 'EUR'. Default is 'USD'
+end
