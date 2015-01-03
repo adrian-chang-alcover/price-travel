@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = PriceTravel::VERSION
   spec.authors       = ["Adrian"]
   spec.email         = ["adrian.chang.alcover@gmail.com\n"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = "PriceTravel is a ruby wrapper for Price Travel"
+  spec.description   = "PriceTravel is a lightweight, flexible Ruby SDK for Price Travel. It allows read access to the Price Travel API."
   spec.homepage      = ""
   spec.license       = "MIT"
 
