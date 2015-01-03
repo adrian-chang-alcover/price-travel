@@ -3,13 +3,10 @@ require 'net/http'
 module PriceTravel
   module HTTPService
 
-    PRODUCTION_SERVER = 'https://api.pricetravel.com'
-    DEVELOPMENT_SERVER = 'http://test-api.pricetravel.com.mx'
-
     class << self
 
       def make_request(uri, params={})
-        uri = URI(DEVELOPMENT_SERVER + uri)
+        uri = URI(PriceTravel.server + uri)
         uri.query = URI.encode_www_form(params)
 
         http = Net::HTTP.new(uri.host, uri.port)
@@ -17,10 +14,11 @@ module PriceTravel
         http.set_debug_output($stdout)
         request = Net::HTTP::Get.new uri.request_uri
         request.content_type = 'text/json'
-        request.basic_auth(Figaro.env.price_travel_user, Figaro.env.price_travel_password)
+        request.basic_auth(PriceTravel.username, PriceTravel.password)
         http.request(request)
       end
 
     end
+
   end
 end
