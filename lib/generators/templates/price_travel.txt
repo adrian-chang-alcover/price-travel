@@ -2,6 +2,6 @@ PriceTravel.setup do |config|
 	config.username = 'your_username'
 	config.password = 'your_password'
 	config.server = 'Price Travel server address'
-	config.locale = 'en_US' # For Example 'de_DE'. Default is 'en_US'
-	config.currency_code = 'USD' # For Example 'EUR'. Default is 'USD'
+	config.locale = 'en-US' # We use the IETF language tag (http://en.wikipedia.org/wiki/IETF_language_tag). For example: en for English, en-US for United States English, es for Spanish, es-MX for Mexican Spanish.
+	config.currency_code = 'USD' # he currency format is the standard ISO 4217 (http://es.wikipedia.org/wiki/ISO_4217), it uses three letter codes. For example: USD for US dollars, MXN for Mexican pesos and GBP for Great Britain pounds.
 end
