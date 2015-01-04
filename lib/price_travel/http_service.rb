@@ -13,7 +13,7 @@ module PriceTravel
                              PriceTravel.proxy_username, PriceTravel.proxy_password)
         http.use_ssl = uri.scheme == 'https'
         http.set_debug_output($stdout)
-        request = Net::HTTP::Get.new uri.request_uri
+        request = Net::HTTP::Get.new(uri.request_uri)
         request.content_type = 'text/json'
         request.basic_auth(PriceTravel.username, PriceTravel.password)
         http.request(request)
