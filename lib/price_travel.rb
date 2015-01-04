@@ -6,7 +6,8 @@ end
 
 module PriceTravel
   class << self
-    attr_accessor :username, :password, :server, :locale, :currency_code
+    attr_accessor :username, :password, :server, :locale, :currency_code,
+                  :proxy_address, :proxy_port, :proxy_username, :proxy_password
 
     # Default way to setup PriceTravel. Run generator to create
     # a fresh initializer with all configuration values.

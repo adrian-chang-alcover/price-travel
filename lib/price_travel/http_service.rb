@@ -9,7 +9,8 @@ module PriceTravel
         uri = URI(PriceTravel.server + uri)
         uri.query = URI.encode_www_form(params)
 
-        http = Net::HTTP.new(uri.host, uri.port)
+        http = Net::HTTP.new(uri.host, uri.port, PriceTravel.proxy_address, PriceTravel.proxy_port,
+                             PriceTravel.proxy_username, PriceTravel.proxy_password)
         http.use_ssl = uri.scheme == 'https'
         http.set_debug_output($stdout)
         request = Net::HTTP::Get.new uri.request_uri
