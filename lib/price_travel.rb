@@ -1,4 +1,7 @@
-require "price_travel/version"
+require 'price_travel/api'
+require 'price_travel/http_service'
+require 'price_travel/response'
+require 'price_travel/version'
 
 if defined?(Rails)
   require 'generators/price_travel/initialize_generator'
