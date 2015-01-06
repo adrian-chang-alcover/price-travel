@@ -8,8 +8,8 @@ module PriceTravel
     def hotels(params)
       begin
         response = PriceTravel::HTTPService.make_request('/services/hotels/availability', params)
-      rescue Errno::ETIMEDOUT => e
-        PriceTravel::Response.new([], [e.to_s])
+      rescue SocketError, Errno::ETIMEDOUT => e
+        PriceTravel::Response.new([], e.to_s)
       else
         hotels = JSON.parse(response.body)
         PriceTravel::Response.new(hotels)
@@ -19,8 +19,8 @@ module PriceTravel
     def flights(params)
       begin
         response = PriceTravel::HTTPService.make_request('/services/flights/itineraries', params)
-      rescue Errno::ETIMEDOUT => e
-        PriceTravel::Response.new([], [e.to_s])
+      rescue SocketError, Errno::ETIMEDOUT => e
+        PriceTravel::Response.new([], e.to_s)
       else
         flights = JSON.parse(response.body)
         PriceTravel::Response.new(flights)
