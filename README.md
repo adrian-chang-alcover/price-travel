@@ -1,6 +1,6 @@
 # PriceTravel
 
-TODO: Write a gem description
+A Ruby gem wrapper for Price Travel API
 
 ## Installation
 
